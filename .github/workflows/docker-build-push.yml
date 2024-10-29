@@ -31,18 +31,18 @@ jobs:
       - name: Build MySQL Docker image
         run: |
           docker build -t mysql-image -f Dockerfile_mysql .
-          docker tag mysql-image:latest 534969654347.dkr.ecr.us-east-1.amazonaws.com/clo835.assignment1:mysql
+          docker tag mysql-image:latest 534969654347.dkr.ecr.us-east-1.amazonaws.com/clo835-assgn2-repo:mysql-v1
 
       - name: Build Web App Docker image
         run: |
           docker build -t webapp-image -f Dockerfile .
-          docker tag webapp-image:latest 534969654347.dkr.ecr.us-east-1.amazonaws.com/clo835.assignment1:webapp
+          docker tag webapp-image:latest 534969654347.dkr.ecr.us-east-1.amazonaws.com/clo835-assgn2-repo:webapp-v1
 
       - name: Push MySQL Docker image to ECR
         run: |
-          docker push 534969654347.dkr.ecr.us-east-1.amazonaws.com/clo835.assignment1:mysql
+          docker push 534969654347.dkr.ecr.us-east-1.amazonaws.com/clo835-assgn2-repo:mysql-v1
 
       - name: Push Web App Docker image to ECR
         run: |
-          docker push 534969654347.dkr.ecr.us-east-1.amazonaws.com/clo835.assignment1:webapp
+          docker push 534969654347.dkr.ecr.us-east-1.amazonaws.com/clo835-assgn2-repo:webapp-v1
           # comment
